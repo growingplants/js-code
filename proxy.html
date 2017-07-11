@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            // 表现力
+            // 对象字面量 JSON
+            var xiaoming = {
+                name: '小明',
+                age: 20,
+                status: '单身',
+                sendFlower: function(target) {
+                    target.reciveFlower(flower,this);
+                }
+            }
+            var xiaomei = {
+                name: '小美',
+                reciveFlower:function(flower,sender) {
+                    console.log(
+                        this.name + '收到' + sender.name + '的花'
+                    );
+                },
+                // 监听小美的心情，好的时候再送
+                listenGoodMood:function(fn) {
+                    console.log('心情很坏，热水解决不了问题');
+                    setTimeout(function() {
+                        // 可以送花了
+                        fn();
+                    },3000)
+                }
+            }
+            // 小红可以做代理？ 接口 interface
+            // 对象，具有同样的方法，就可以被替代调用
+
+            var xiaohong = {
+                name: '小红',
+                reciveFlower:function(flower,sender) {
+                    console.log(sender);
+                    xiaomei.listenGoodMood(function() {
+                        xiaomei.reciveFlower(flower,sender);
+                    });
+                    // if(sender.name === '小明') {
+                    //     // console.log('啊，我的男神，我觉得是送我的');
+                    //     // console.log('小明，让我们在一起吧');
+                    //     console.log('小明，我先把你放在心里');
+                    //     xiaomei.reciveFlower(flower,sender);
+                    // } else {
+                    //     xiaomei.reciveFlower(folwer,sender);
+                    // }
+                }
+            }
+            // 函数是一等对象
+            function Flower(type,price) {
+                this.type = type;
+                this.price = price;
+            }
+            Flower.prototype.buy = function() {
+                console.log(this.type + ',请付' + this.price + '元')
+            }
+            var flower = new Flower('玫瑰',128);
+            flower.buy();
+            xiaoming.sendFlower(xiaohong);
+
+        </script>
+    </body>
+</html>
