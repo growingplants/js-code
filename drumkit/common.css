@@ -1,0 +1,61 @@
+/*根 最大的元素 inherit
+字体 字号 背景颜色 行高...*/
+html {
+    font-size: 10px;
+    height: 100%;
+    background: url(b9r5sEL.jpg);
+    background-position: bottom right;
+    background-repeat: no-repeat;
+    -ms-background-size: cover;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+body,html {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+.keys {
+    /*弹性布局*/
+    display: flex;
+    /*最小高度 100vh
+    vh是相对单位，不管你的设备，百分比等比样式
+    手机的差异化*/
+    min-height: 100vh;
+    /*垂直居中*/
+    align-items: center;
+    /*主轴水平对齐*/
+    justify-content: center;
+    /*color: white;*/
+}
+.key {
+    border: 1px solid #000;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    font-size: 15px;
+    margin: 10px;
+    padding: 10px 5px;
+    width: 100px;
+    text-align: center;
+    color: #fff;
+    background: rgba(0, 0, 0,.4);
+    /*css 过渡 依赖于样式的改变，并在改变的过程中，运用动画*/
+    transition: all .07s ease;
+}
+.key>div {
+    display: block;
+    font-size: 40px;
+}
+.key .sound {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #ffc600; 
+}
+.playing {
+    /*变形 放大*/
+    transform: scale(1.5);
+    border-color: #ffc600;
+    box-shadow: 0 0 10px #ffc600;
+}
