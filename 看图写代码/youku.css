@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    background-color: #333;
+    height: 100%;
+    display: flex;
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+#theNav {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    margin: 0 30px 30px;
+}
+
+.theNav-primary {
+    border-bottom: 1px solid #999;
+    display: -webkit-box;
+    display: flex;
+    height: 56px;
+    /* padding: 0 18px; */
+}
+
+.theNav-primary ul li {
+    display: inline-block;
+    font-size: 17px;
+    height: 100%;
+    padding: 0 20px 0 0;
+    line-height: 56px;
+}
+.theNav-primary ul {
+    height: 100%;
+    list-style: none;
+
+}
+.theNav-primary ul li.checked a{
+    border-bottom: 1px solid #44ceff;
+}
+.theNav-primary ul li a {
+    text-decoration: none;
+    color: #999;
+    display: inline-block;
+    height: 100%;
+}
+.title {
+    margin-top: 15px;
+}
+.title .p1 {
+    font-size: 17px;
+    color: #fff;
+    margin-bottom: 2px;
+}
+
+.title .p2 {
+    font-size: 10px;
+    color: #999;
+    margin-bottom: 20px;
+}
+
+.con-box {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.con-box ul {
+    display: flex;
+    flex: 1;
+}
+
+.con-box li {
+    display: flex;
+    font-size: 16px;
+    border: 1px solid;
+    text-align: center;
+    flex: 1;
+}
+
+.con-box li:hover{
+    border: 1px solid #44ceff;
+ 
+}
+.con-box li:hover a span {
+    color: #44ceff;
+}
+
+.con-box li a {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+
